@@ -10,6 +10,7 @@ class DisplayTime extends StatefulWidget {
 }
 
 class _DisplayTimeState extends State<DisplayTime> {
+  var b;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,18 +24,52 @@ class _DisplayTimeState extends State<DisplayTime> {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 200,),
+            // SizedBox(height: 200,),
 
-            Text('12:38 Tue',style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.w800),),
+            // Text('12:38 Tue',style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.w800),),
 
-            SizedBox(height: 80,),
+            // SizedBox(height: 80,),
 
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blueAccent
+            // ElevatedButton(
+            //   style: ElevatedButton.styleFrom(
+            //     backgroundColor: Colors.blueAccent
+            //   ),
+            //   onPressed: () {}, 
+            //   child: Text('Timer',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),)
+            // )
+
+            SizedBox(height: 150,),
+
+            Container(
+              width: 250,
+              height: 50,
+              decoration: BoxDecoration(
+                border: Border.all(),
+                borderRadius: BorderRadius.circular(20)
               ),
-              onPressed: () {}, 
-              child: Text('Timer',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),)
+
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15.0),
+                    child: Text('$b'),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.only(right: 10.0),
+                    child: IconButton(
+                      onPressed: (){
+                        setState(() {
+                         b=TimeOfDay.now();
+                        });
+                      }, 
+                      icon: Icon(Icons.watch)
+                    ),
+                  )
+                ],
+              ),
             )
           ],
         ),
