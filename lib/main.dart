@@ -1,0 +1,28 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:flutter/material.dart';
+import 'package:flutter_machine_test/Counter%20App.dart';
+import 'package:flutter_machine_test/Display%20Time.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+ 
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: DisplayTime()
+    );
+  }
+}
+
